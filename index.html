@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Когнитивный тренажер</title>
+    <meta name="description" content="Игры для развития памяти, внимания и мышления">
+    <meta name="keywords" content="игры, память, внимание, тренажер, мозг, развитие">
+    <meta name="author" content="AlisaTarasova01">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mainMenu" class="screen active">
+        <h1>Добро пожаловать на платформу с играми для развития когнитивных навыков</h1>
+        <div class="games-grid">
+            <button onclick="showGame('memory')">Карточки</button>
+            <button onclick="showGame('puzzle')">Пазлы</button>
+            <button onclick="showGame('schulte')">Таблица Шульте</button>
+            <button onclick="showGame('matrix')">Матрица</button>
+        </div>
+    </div>
+
+    <div class="nav-buttons">
+        <button id="homeButton" class="nav-btn home-btn" onclick="showMainMenu()">🏠 Главное меню</button>
+        <button id="levelSelectButton" class="nav-btn level-select-btn" onclick="showLevelSelectionForCurrentGame()">📋 Выбор уровня</button>
+    </div>
+
+    <div id="gameContainer" class="screen"></div>
+    
+    <!-- Экран для просмотра полного изображения пазла -->
+    <div id="puzzleImageScreen" class="screen">
+        <button id="backToPuzzleButton" class="puzzle-back-btn" onclick="hidePuzzleImage()">Вернуться к сборке пазла</button>
+        <div class="puzzle-image-container">
+            <div class="full-image-wrapper">
+                <img id="fullPuzzleImage" src="" alt="Полное изображение пазла">
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно уведомлений-поздравлений -->
+    <div id="notificationOverlay" class="notification-overlay">
+        <div class="notification-box">
+            <div class="notification-header">
+                <h3>🎉 Поздравляем!</h3>
+                <span class="notification-close" onclick="hideNotification()">×</span>
+            </div>
+            <div class="notification-body">
+                <p id="notificationMessage"></p>
+            </div>
+            <div class="notification-footer">
+                <button class="notification-btn" onclick="hideNotification()">Продолжить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
