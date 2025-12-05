@@ -719,7 +719,8 @@ function startMatrixGame(cellCount) {
     const gameContainer = document.getElementById('gameContainer');
     
     gameContainer.innerHTML = `
-        <h2 class="matrix-instruction">Запомните расположение подсвеченных клеток, затем нажмите "Готово" и восстановите матрицу</h2>
+        <h2 class="matrix-instruction">Запомните расположение подсвеченных клеток,<br>
+        затем нажмите "Готово" и восстановите матрицу</h2>
         <div class="matrix-container">
             <div class="matrix-game" id="matrixGame"></div>
             <div class="matrix-controls-center">
@@ -829,4 +830,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Запуск
+
 showMainMenu();
