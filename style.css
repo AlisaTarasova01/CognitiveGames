@@ -1,12 +1,15 @@
+/* ============================================================================
+   БАЗОВЫЕ СТИЛИ И СБРОС
+   ============================================================================ */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Упрощаем расчет размеров */
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Градиентный фон */
     min-height: 100vh;
     padding: 20px;
     color: #333;
@@ -15,23 +18,29 @@ body {
     align-items: center;
 }
 
+/* ============================================================================
+   СИСТЕМА ЭКРАНОВ (SCREENS)
+   ============================================================================ */
 .screen {
     text-align: center;
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    display: none;
+    display: none; /* По умолчанию скрыты */
     width: 100%;
 }
 
 .screen.active {
-    display: flex;
+    display: flex; /* Активный экран отображается как flex-контейнер */
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 80vh;
 }
 
+/* ============================================================================
+   ТИПОГРАФИКА
+   ============================================================================ */
 h1 {
     color: white;
     margin-bottom: 80px;
@@ -48,8 +57,7 @@ h2 {
     text-align: center;
 }
 
-/* Инструкция для матрицы */
-.matrix-instruction {
+.matrix-instruction { /* Специальный стиль для инструкции матрицы */
     color: white;
     margin-bottom: 30px;
     font-size: 2em;
@@ -57,16 +65,21 @@ h2 {
     line-height: 1.4;
 }
 
-/* Главное меню */
+/* ============================================================================
+   ГЛАВНОЕ МЕНЮ
+   ============================================================================ */
 .games-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
     gap: 30px;
     margin-top: 40px;
     width: 100%;
     max-width: 600px;
 }
 
+/* ============================================================================
+   КНОПКИ (ОБЩИЕ СТИЛИ)
+   ============================================================================ */
 button {
     background: #ff6b6b;
     color: white;
@@ -80,12 +93,14 @@ button {
 }
 
 button:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Эффект поднятия */
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     background: #ff5252;
 }
 
-/* Кнопки навигации */
+/* ============================================================================
+   НАВИГАЦИОННЫЕ КНОПКИ (левый верхний угол)
+   ============================================================================ */
 .nav-buttons {
     position: fixed;
     top: 20px;
@@ -93,32 +108,34 @@ button:hover {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    z-index: 1000;
+    z-index: 1000; /* Поверх других элементов */
 }
 
 .nav-btn {
     padding: 12px 20px;
     font-size: 1em;
-    display: none;
+    display: none; /* По умолчанию скрыты */
     background: #4ecdc4;
     margin: 0;
 }
 
 .nav-btn.active {
-    display: block;
+    display: block; /* Показываем только активные кнопки */
 }
 
-/* Кнопка "Начать заново" для пазлов (правый верхний угол) */
+/* ============================================================================
+   КНОПКИ УПРАВЛЕНИЯ ПАЗЛАМИ (правый верхний угол)
+   ============================================================================ */
 #puzzleResetButton {
     position: fixed;
     top: 20px;
     right: 20px;
     padding: 12px 20px;
     font-size: 1em;
-    background: #ff6b6b;
+    background: #4ecdc4;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -132,17 +149,16 @@ button:hover {
     transform: translateY(-2px);
 }
 
-/* Кнопка "Показать картинку" для пазлов (правый верхний угол под кнопкой "Начать заново") */
 #puzzleShowImageButton {
     position: fixed;
-    top: 72px;
+    top: 72px; /* Расположение под кнопкой "Начать заново" */
     right: 20px;
     padding: 12px 20px;
     font-size: 1em;
     background: #4ecdc4;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -152,34 +168,36 @@ button:hover {
 }
 
 #puzzleShowImageButton:hover {
-    background: #45b7d1;
+    background: #ff5252;
     transform: translateY(-2px);
 }
 
-/* Кнопка "Вернуться к сборке пазла" на экране изображения */
-#backToPuzzleButton {
+#backToPuzzleButton { /* Кнопка возврата с экрана изображения */
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 30px;
+    right: 30px;
     padding: 12px 20px;
     font-size: 1em;
     background: #4ecdc4;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
-    display: none;
+    display: none; /* По умолчанию скрыта */
     width: 220px;
 }
 
 #backToPuzzleButton:hover {
-    background: #45b7d1;
+    background: #ff5252;
     transform: translateY(-2px);
 }
 
+/* ============================================================================
+   ВЫБОР УРОВНЯ
+   ============================================================================ */
 .level-selector {
     display: flex;
     flex-direction: column;
@@ -199,7 +217,9 @@ button:hover {
     background: #45b7d1;
 }
 
-/* Стили для игры Карточки */
+/* ============================================================================
+   ИГРА "КАРТОЧКИ" (MEMORY)
+   ============================================================================ */
 .memory-game {
     display: grid;
     gap: 10px;
@@ -210,7 +230,7 @@ button:hover {
 .memory-card {
     width: 100px;
     height: 100px;
-    perspective: 1000px;
+    perspective: 1000px; /* Для 3D-эффекта переворота */
     cursor: pointer;
 }
 
@@ -223,7 +243,7 @@ button:hover {
 }
 
 .memory-card.flipped .memory-card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Эффект переворота */
 }
 
 .memory-card-front,
@@ -231,7 +251,7 @@ button:hover {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden;
+    backface-visibility: hidden; /* Скрываем обратную сторону */
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -240,19 +260,18 @@ button:hover {
 }
 
 .memory-card-front {
-    background: #ffd166;
+    background: #ffd166; /* Желтая лицевая сторона */
 }
 
 .memory-card-back {
     background: white;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); /* Изначально перевернута */
 }
 
 .memory-card.wrong {
-    animation: shake 0.5s;
+    animation: shake 0.5s; /* Анимация ошибки */
 }
 
-/* Контейнер для кнопки "Начать заново" в игре Карточки */
 .memory-controls-bottom {
     width: 100%;
     display: flex;
@@ -260,7 +279,9 @@ button:hover {
     margin: 20px 0;
 }
 
-/* Стили для таблицы Шульте */
+/* ============================================================================
+   ИГРА "ТАБЛИЦА ШУЛЬТЕ" (SCHULTE)
+   ============================================================================ */
 .schulte-instruction-wrapper {
     width: 100%;
     max-width: 800px;
@@ -297,7 +318,7 @@ button:hover {
     justify-content: center;
     position: relative;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15); /* Полупрозрачный фон */
     border-radius: 20px;
 }
 
@@ -315,31 +336,31 @@ button:hover {
     z-index: 2;
     font-weight: bold;
     border: 2px solid rgba(0,0,0,0.1);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1; /* Квадратные ячейки */
     width: 100%;
     height: 100%;
 }
 
-.schulte-cell.empty {
+.schulte-cell.empty { /* Пустая ячейка для красной точки */
     background: transparent;
     box-shadow: none;
     cursor: default;
     border: none;
 }
 
-.schulte-cell.current {
+.schulte-cell.current { /* Правильно найденное число */
     background: #4ecdc4;
     color: white;
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(78, 205, 196, 0.7);
 }
 
-.schulte-cell.wrong {
+.schulte-cell.wrong { /* Ошибочный выбор */
     background: #ff6b6b;
     color: white;
 }
 
-.schulte-center {
+.schulte-center { /* Красная точка в центре */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -349,7 +370,7 @@ button:hover {
     background: rgba(255, 0, 0, 0.95);
     border-radius: 50%;
     z-index: 3;
-    pointer-events: none;
+    pointer-events: none; /* Не блокирует клики по ячейкам */
     box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
     border: 2px solid white;
 }
@@ -361,21 +382,9 @@ button:hover {
     margin: 10px 0;
 }
 
-.schulte-controls-bottom .control-btn {
-    position: relative;
-    z-index: 1000;
-}
-
-/* Контейнер для кнопок управления в игре Шульте */
-.schulte-game-controls {
-    margin: 20px 0;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-/* Стили для игры Пазлы */
+/* ============================================================================
+   ИГРА "ПАЗЛЫ" (PUZZLE)
+   ============================================================================ */
 .puzzle-container {
     display: flex;
     flex-direction: column;
@@ -383,7 +392,7 @@ button:hover {
     gap: 20px;
     margin: 20px 0;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 .puzzle-area {
@@ -405,7 +414,7 @@ button:hover {
     display: grid;
     position: relative;
     overflow: hidden;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Запрещаем уменьшение */
 }
 
 .puzzle-slot {
@@ -418,8 +427,7 @@ button:hover {
     align-items: center;
 }
 
-/* Подсветка слота при наведении */
-.puzzle-slot.hovered {
+.puzzle-slot.hovered { /* Подсветка при наведении */
     background: rgba(78, 205, 196, 0.5);
     border: 2px dashed #333;
 }
@@ -431,9 +439,9 @@ button:hover {
     padding: 15px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    width: 600px;
+    width: 900px;
     height: 600px;
-    overflow-y: auto;
+    overflow-y: auto; /* Прокрутка при большом количестве кусочков */
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
@@ -456,12 +464,11 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Скрываем элемент при переносе (визуальный эффект) */
-.puzzle-piece.hide {
+.puzzle-piece.hide { /* Визуальное скрытие при перетаскивании */
     opacity: 0;
 }
 
-.puzzle-piece.correct {
+.puzzle-piece.correct { /* Собранный кусочек */
     border: none;
     cursor: default;
     box-shadow: none;
@@ -469,14 +476,18 @@ button:hover {
     border: 1px solid rgba(255,255,255,0.5);
 }
 
-/* Анимация ошибки */
-@keyframes shake {
+/* ============================================================================
+   АНИМАЦИИ
+   ============================================================================ */
+@keyframes shake { /* Анимация тряски для ошибок */
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
 }
 
-/* Стили для матрицы */
+/* ============================================================================
+   ИГРА "МАТРИЦА" (MATRIX)
+   ============================================================================ */
 .matrix-container {
     display: flex;
     flex-direction: column;
@@ -487,7 +498,7 @@ button:hover {
 
 .matrix-game {
     display: grid;
-    grid-template-columns: repeat(4, 80px);
+    grid-template-columns: repeat(4, 80px); /* Фиксированная сетка 4x4 */
     gap: 10px;
     margin: 20px auto;
     justify-content: center;
@@ -512,17 +523,16 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.matrix-cell.highlighted {
+.matrix-cell.highlighted { /* Исходное подсвеченное состояние */
     background: #4ecdc4;
     border-color: #2aa198;
 }
 
-.matrix-cell.selected {
+.matrix-cell.selected { /* Выбранное игроком состояние */
     background: #ffd166;
     border-color: #ffb142;
 }
 
-/* Центрированные кнопки управления для матрицы */
 .matrix-controls-center {
     display: flex;
     gap: 20px;
@@ -537,6 +547,9 @@ button:hover {
     font-size: 1.1em;
 }
 
+/* ============================================================================
+   ОБЩИЕ КНОПКИ УПРАВЛЕНИЯ
+   ============================================================================ */
 .control-btn {
     background: #4ecdc4;
     margin: 0;
@@ -545,10 +558,12 @@ button:hover {
 }
 
 .control-btn.reset {
-    background: #ff6b6b;
+    background: #ff6b6b; /* Красная кнопка сброса */
 }
 
-/* Стили для заголовка в игре пазлы */
+/* ============================================================================
+   ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ПАЗЛОВ
+   ============================================================================ */
 .puzzle-title {
     color: white;
     margin-bottom: 30px;
@@ -557,7 +572,9 @@ button:hover {
     line-height: 1.4;
 }
 
-/* Стили для экрана с полным изображением пазла */
+/* ============================================================================
+   ЭКРАН ПОЛНОГО ИЗОБРАЖЕНИЯ ПАЗЛА
+   ============================================================================ */
 .puzzle-image-container {
     display: flex;
     flex-direction: column;
@@ -566,14 +583,6 @@ button:hover {
     margin: 10px 0 0 0;
     width: 100%;
     max-width: 1200px;
-}
-
-.puzzle-image-title {
-    color: white;
-    font-size: 2.5em;
-    text-align: center;
-    line-height: 1.4;
-    margin-top: 20px;
 }
 
 .full-image-wrapper {
@@ -596,7 +605,9 @@ button:hover {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Стили для уведомлений-поздравлений */
+/* ============================================================================
+   СИСТЕМА УВЕДОМЛЕНИЙ И ПОЗДРАВЛЕНИЙ
+   ============================================================================ */
 .notification-overlay {
     position: fixed;
     top: 0;
@@ -607,7 +618,7 @@ button:hover {
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 2000; /* Поверх всего */
     animation: fadeIn 0.3s ease;
 }
 
@@ -622,7 +633,7 @@ button:hover {
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    animation: slideIn 0.5s ease;
+    animation: slideIn 0.5s ease, pulse 2s infinite 0.5s; /* Двойная анимация */
     transform-origin: center;
     border: 3px solid rgba(255, 255, 255, 0.2);
 }
@@ -662,7 +673,7 @@ button:hover {
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 25px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
 }
 
 .notification-body p {
@@ -699,7 +710,9 @@ button:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* Анимации для уведомлений */
+/* ============================================================================
+   АНИМАЦИИ ДЛЯ УВЕДОМЛЕНИЙ
+   ============================================================================ */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -716,17 +729,15 @@ button:hover {
     }
 }
 
-@keyframes pulse {
+@keyframes pulse { /* Анимация пульсации для уведомлений */
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-.notification-box {
-    animation: slideIn 0.5s ease, pulse 2s infinite 0.5s;
-}
-
-/* Добавьте этот код в конец файла */
+/* ============================================================================
+   МИКРОКОРРЕКТИРОВКИ
+   ============================================================================ */
 .schulte-container {
-    margin-top: -30px;
+    margin-top: -30px; /* Небольшая регулировка отступа */
 }
