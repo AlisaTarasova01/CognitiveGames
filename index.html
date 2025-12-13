@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Главное меню с выбором игры -->
     <div id="mainMenu" class="screen active">
         <h1>Добро пожаловать на платформу с играми для развития когнитивных навыков</h1>
         <div class="games-grid">
@@ -20,11 +21,13 @@
         </div>
     </div>
 
+    <!-- Навигационные кнопки (появляются во время игры) -->
     <div class="nav-buttons">
         <button id="homeButton" class="nav-btn home-btn" onclick="showMainMenu()">🏠 Главное меню</button>
         <button id="levelSelectButton" class="nav-btn level-select-btn" onclick="showLevelSelectionForCurrentGame()">📋 Выбор уровня</button>
     </div>
 
+    <!-- Контейнер для игр (динамически заполняется) -->
     <div id="gameContainer" class="screen"></div>
     
     <!-- Экран для просмотра полного изображения пазла -->
@@ -37,7 +40,7 @@
         </div>
     </div>
 
-    <!-- Окно уведомлений-поздравлений -->
+    <!-- Окно уведомлений-поздравлений (всплывающее) -->
     <div id="notificationOverlay" class="notification-overlay">
         <div class="notification-box">
             <div class="notification-header">
