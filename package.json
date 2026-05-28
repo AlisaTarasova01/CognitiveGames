@@ -15,7 +15,7 @@
     "url": "git+https://github.com/AlisaTarasova01/CognitiveGames.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Алиса Тарасова",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
@@ -48,7 +48,8 @@
     "dir"
   ],
   "icon": "assets/icon.png",
-  "category": "Education"
+  "category": "Education",
+  "executableName": "cognitive-trainer"
   }
 }
 }
