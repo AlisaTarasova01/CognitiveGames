@@ -1,0 +1,52 @@
+{
+  "name": "cognitivegames",
+  "version": "1.0.0",
+  "description": "Платформа с играми для развития когнитивных навыков.",
+  "main": "main.js",
+  "scripts": {
+  "start": "electron .",
+  "dist": "electron-builder",
+  "dist:win": "electron-builder --win",
+  "dist:linux": "electron-builder --linux",
+  "dist:linux-dir": "electron-builder --linux dir"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlisaTarasova01/CognitiveGames.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AlisaTarasova01/CognitiveGames/issues"
+  },
+  "homepage": "https://github.com/AlisaTarasova01/CognitiveGames#readme",
+  "devDependencies": {
+    "electron": "^42.3.0",
+    "electron-builder": "^26.8.1"
+  },
+"build": {
+  "appId": "ru.guap.cognitivegames",
+  "productName": "Когнитивный тренажер",
+  "files": [
+    "index.html",
+    "style.css",
+    "script.js",
+    "main.js",
+    "puz*.jpg",
+    "LICENSE",
+    "README.md"
+  ],
+  "win": {
+    "target": "nsis"
+  },
+  "linux": {
+    "target": [
+      "AppImage",
+      "deb"
+    ],
+    "category": "Education"
+  }
+}
+}
