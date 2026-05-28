@@ -9,6 +9,7 @@ function createWindow() {
         minHeight: 650,
         title: 'Когнитивный тренажер',
         backgroundColor: '#6c63d9',
+        icon: path.join(__dirname, 'assets', 'icon.png'),
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true
